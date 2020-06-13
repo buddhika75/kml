@@ -114,6 +114,38 @@
                                                         <td style="min-width: 200px!important;">
                                                             <h:outputLabel value="#{pvv.investigationItem.name}"></h:outputLabel>
                                                         </td>
+                                                        
+                                                        <td style="min-width: 200px!important;">
+                                                            <h:outputLabel value="#{pvv.investigationItem.item.id}"></h:outputLabel>
+                                                        </td>
+                                                        
+                                                         <td style="min-width: 200px!important;">
+                                                             <h:outputLabel value="#{pvv.investigationItem.item.name}"></h:outputLabel>
+                                                        </td>
+                                                        
+                                                        
+                                                          <td style="min-width: 200px!important;">
+                                                              <h:outputLabel value="#{pvv.investigationItem.item.department.name}"></h:outputLabel>
+                                                        </td>
+                                                        
+                                                         <td style="min-width: 200px!important;">
+                                                             <h:outputLabel value="#{pvv.investigationItem.retired}"></h:outputLabel>
+                                                        </td>
+                                                        
+                                                           
+                                                         <td style="min-width: 200px!important;">
+                                                             <h:outputLabel value="#{pvv.investigationItem.retiredAt}">
+                                                                 <f:convertDateTime pattern="dd MMMM yyyy hh:mm a" ></f:convertDateTime>
+                                                             </h:outputLabel>
+                                                        </td>
+                                                        
+                                                        
+                                                         <td style="min-width: 200px!important;">
+                                                             <h:outputLabel value="#{pvv.investigationItem.retirer.webUserPerson.nameWithTitle}">
+                                                                 <f:convertDateTime pattern="dd MMMM yyyy hh:mm a" ></f:convertDateTime>
+                                                             </h:outputLabel>
+                                                        </td>
+                                                        
                                                         <td >
                                                             <p:inputText autocomplete="off" value="#{pvv.strValue}" disabled="#{patientReportController.currentPatientReport.approved}"
                                                                          rendered="#{pvv.investigationItem.ixItemValueType eq 'Varchar' and empty pvv.investigationItem.investigationItemValues}" >

@@ -74,6 +74,7 @@ public class SessionController implements Serializable, HttpSessionListener {
     private WebUserDepartmentFacade webUserDepartmentFacade;
     @EJB
     UserPreferenceFacade userPreferenceFacade;
+    
     @EJB
     private CashTransactionBean cashTransactionBean;
     @EJB
@@ -105,6 +106,7 @@ public class SessionController implements Serializable, HttpSessionListener {
     WebUser loggedUser = null;
     private UserPreference loggedPreference;
     private UserPreference applicationPreference;
+    private UserPreference institutionPreference;
     UserPreference userPreference;
     boolean logged = false;
     boolean activated = false;
@@ -147,6 +149,8 @@ public class SessionController implements Serializable, HttpSessionListener {
         currentPreference.setInstitution(null);
         return "/admin_mange_application_preferences";
     }
+    
+    
 
     public String toManageIntitutionPreferences() {
         String jpql;
@@ -1501,6 +1505,16 @@ public class SessionController implements Serializable, HttpSessionListener {
 
     public void setApplicationPreference(UserPreference applicationPreference) {
         this.applicationPreference = applicationPreference;
+    }
+
+    public UserPreference getInstitutionPreference() {
+        institutionPreference = getUserPreference();
+        return institutionPreference;
+    }
+
+    public void setInstitutionPreference(UserPreference institutionPreference) {
+        this.institutionPreference = institutionPreference;
+        setUserPreference(institutionPreference);
     }
 
 }

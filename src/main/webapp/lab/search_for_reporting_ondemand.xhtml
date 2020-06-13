@@ -289,6 +289,16 @@
                                                        ajax="false" action="/lab/patient_report">
                                             <f:setPropertyActionListener value="#{dpr}" target="#{patientReportController.currentPatientReport}"></f:setPropertyActionListener>
                                         </p:commandLink>
+                                        
+                                        
+                                        <p:spacer ></p:spacer>
+                                        <p:commandLink id="cmdOldReport1" style="text-decoration:underline;" 
+                                                       value="DEBUG" 
+                                                       ajax="false" action="/lab/patient_report_1">
+                                            <f:setPropertyActionListener value="#{dpr}" target="#{patientReportController.currentPatientReport}"></f:setPropertyActionListener>
+                                        </p:commandLink>
+                                        
+                                        
                                         <h:panelGrid columns="5" styleClass="noBorderGrid" >
                                             <p:commandLink id="cmdOldReportEdit" ajax="false" action="/lab/patient_report">
                                                 <f:setPropertyActionListener value="#{dpr}" target="#{patientReportController.currentPatientReport}"></f:setPropertyActionListener>
