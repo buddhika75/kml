@@ -64,7 +64,7 @@ public class SheduleController implements Serializable {
     StockHistoryRecorder stockHistoryRecorder;
     @Inject
     private SessionController sessionController;
-    @Inject
+    @EJB
     CommonFunctions commonFunctions;
     private Speciality speciality;
     ServiceSession current;

@@ -100,7 +100,7 @@ public class StoreBillSearch implements Serializable {
     private CommonFunctions commonFunctions;
     @EJB
     private BillNumberGenerator billNumberBean;
-    @Inject
+    @EJB
     StoreBean StoreBean;
     @EJB
     EjbApplication ejbApplication;

@@ -26,10 +26,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.prefs.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import javax.swing.JOptionPane;
 
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -53,7 +49,7 @@ public class SmsController implements Serializable {
 
     @Inject
     SessionController sessionController;
-    @Inject
+    @EJB
     CommonFunctions commonFunctions;
 
     List<Sms> smses;

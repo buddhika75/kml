@@ -14,8 +14,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.TemporalType;
 
@@ -33,7 +33,7 @@ public class LoginController implements Serializable {
     Date toDate;
     Logins longin;
     List<Logins> logins;
-    @Inject
+    @EJB
     LoginsFacade facade;
 
     /**
