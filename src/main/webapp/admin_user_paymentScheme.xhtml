@@ -11,9 +11,9 @@
     <ui:define name="content">
 
      sdfsdfsdfsd
-     #{webUserController.hasPrivilege('AdminManagingUsers') or sessionController.firstLogin }
+     #{webUserController.hasPrivilege('AdminManagingUsers') }
      aaaaaa
-        <h:panelGroup rendered="#{webUserController.hasPrivilege('AdminManagingUsers') or sessionController.firstLogin }" >
+        <h:panelGroup rendered="#{webUserController.hasPrivilege('AdminManagingUsers') }" >
             <h:form  >
                 <p:panel header="Allowed Payment Schemes for Users" >
                     <h:panelGrid  columns="2" >                          

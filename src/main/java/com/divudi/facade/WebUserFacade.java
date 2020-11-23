@@ -15,9 +15,10 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class WebUserFacade extends AbstractFacade<WebUser> {
-    @PersistenceContext(unitName = "hmisPU")
+    @PersistenceContext(unitName = "pu")
     private EntityManager em;
 
+    
     @Override
     protected EntityManager getEntityManager() {
         if(em == null){}return em;

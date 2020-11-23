@@ -57,7 +57,7 @@ public class PersonInstitutionController implements Serializable {
     private PagingInfo pagingInfo = null;
     @Resource
     private UserTransaction utx = null;
-    @PersistenceUnit(unitName = "hmisPU")
+    @PersistenceUnit(unitName = "pu")
     private EntityManagerFactory emf = null;
 
     @Inject

@@ -17,7 +17,7 @@ import javax.persistence.Query;
 @Stateless
 public class PatientSampleFacade extends AbstractFacade<PatientSample> {
 
-    @PersistenceContext(unitName = "hmisPU")
+    @PersistenceContext(unitName = "pu")
     private EntityManager em;
 
     @Override

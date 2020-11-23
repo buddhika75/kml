@@ -50,9 +50,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-import org.primefaces.event.CloseEvent;
-import org.primefaces.event.DashboardReorderEvent;
-import org.primefaces.event.ToggleEvent;
 import org.primefaces.model.DashboardColumn;
 import org.primefaces.model.DashboardModel;
 import org.primefaces.model.DefaultDashboardColumn;
@@ -74,7 +71,7 @@ public class SessionController implements Serializable, HttpSessionListener {
     private WebUserDepartmentFacade webUserDepartmentFacade;
     @EJB
     UserPreferenceFacade userPreferenceFacade;
-    
+
     @EJB
     private CashTransactionBean cashTransactionBean;
     @EJB
@@ -149,8 +146,6 @@ public class SessionController implements Serializable, HttpSessionListener {
         currentPreference.setInstitution(null);
         return "/admin_mange_application_preferences";
     }
-    
-    
 
     public String toManageIntitutionPreferences() {
         String jpql;
@@ -398,16 +393,13 @@ public class SessionController implements Serializable, HttpSessionListener {
             }
         }
         // password
-        if (isFirstVisit()) {
-            prepareFirstVisit();
-            return true;
-        } else {
-            if (department == null) {
-                UtilityController.addErrorMessage("Please select a department");
-                return false;
-            }
-            return checkUsers();
+
+        if (department == null) {
+            UtilityController.addErrorMessage("Please select a department");
+            return false;
         }
+        return checkUsers();
+
     }
 
     private boolean loginWithoutDepartment() {
@@ -555,15 +547,6 @@ public class SessionController implements Serializable, HttpSessionListener {
             return true;
         } else {
 //            UtilityController.addSuccessMessage("Welcome back");
-            return false;
-        }
-
-    }
-
-    public boolean isFirstLogin() {
-        if (getFacede().count() <= 1) {
-            return true;
-        } else {
             return false;
         }
 
@@ -937,7 +920,7 @@ public class SessionController implements Serializable, HttpSessionListener {
 
         sql = "select p from UserPreference p where p.institution is null and p.department is null and p.webUser is null order by p.id desc";
         applicationPreference = getUserPreferenceFacade().findFirstBySQL(sql);
-        if(applicationPreference==null){
+        if (applicationPreference == null) {
             applicationPreference = new UserPreference();
             getUserPreferenceFacade().create(applicationPreference);
         }
