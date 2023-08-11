@@ -348,13 +348,13 @@
 
                         <div class="nonPrintBlock" >
                             <h:panelGroup rendered="false" >
-                                <p:commandButton  styleClass="nonPrintBlock"  ajax="false" value="Print" onclick="window.print();" actionListener="#{patientReportController.printPatientReport()}" 
+                                <p:commandButton  styleClass="nonPrintBlock"  ajax="false" value="PRINT" onclick="window.print();" actionListener="#{patientReportController.printPatientReport()}" 
                                                   rendered="#{patientReportController.currentPatientReport.approved or userPreferenceController.userPreference.canPrintWithoutPermission }" />
 
 
                             </h:panelGroup>
                             <h:panelGrid columns="3" >
-                                <p:commandButton value="Print" ajax="false" actionListener="#{patientReportController.printPatientReport()}"
+                                <p:commandButton ajax="false" value="Print" actionListener="#{patientReportController.printPatientReport()}"
                                                  rendered="#{patientReportController.currentPatientReport.approved or userPreferenceController.userPreference.canPrintWithoutPermission }" >
                                     <p:printer target="divPrint" ></p:printer>
                                 </p:commandButton>
